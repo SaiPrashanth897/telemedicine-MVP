@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Round Note - Smart Care Assistant</title>
+  <link rel="stylesheet" href="style/add1.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2 class="logo">SmartCare</h2>
+      <nav>
+        <nav>
+          <ul>
+            <li><a href="doctor-dashboar.html">🏠 Dashboard</a></li>
+            <li><a href="patient.html">👥 Patients</a></li>
+            <li><a href="add-note.html" class="active">📝 Add Note</a></li>
+            <li><a href="prescriptions2.html">💊 Prescriptions</a></li>
+            <li><a href="symthon.html">📈 Trends</a></li>
+            <li><a href="add-p.html" >📥 Add</a></li>
+            <li><a href="adr-alerts.html">⚠️ ADR Alerts</a></li>
+            <li><a href="reports.html">📄 Reports</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+            <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+          </ul>
+        </nav>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="note-container">
+        <h2>Add / Update Round Note</h2>
+        <form id="roundNoteForm">
+          <label for="patientSelect">Select Patient:</label>
+          <select id="patientSelect" required>
+            <option value="">Loading patients...</option>
+          </select>
+
+          <h3>Vitals</h3>
+          <input type="text" id="bp" placeholder="Blood Pressure (e.g., 120/80)" />
+          <input type="text" id="hr" placeholder="Heart Rate (bpm)" />
+          <input type="text" id="spo2" placeholder="SpO2 (%)" />
+          <input type="text" id="temp" placeholder="Temperature (°C)" />
+          <input type="text" id="rr" placeholder="Respiratory Rate" />
+
+          <h3>Symptoms</h3>
+          <textarea id="symptoms" rows="3" placeholder="Describe symptoms..."></textarea>
+          <button type="button" id="addTemplate">🩺 Use Common Symptoms</button>
+
+          <h3>Notes</h3>
+          <textarea id="noteText" rows="4" placeholder="Additional notes..."></textarea>
+          <button type="button" id="voiceBtn">🎙️ Voice-to-Text</button>
+
+          <button type="submit">💾 Save Note</button>
+        </form>
+
+        <div id="statusMessage"></div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="scripts/add.js"></script>
+</body>
+</html>

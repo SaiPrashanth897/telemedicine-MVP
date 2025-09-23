@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Dashboard - Smart Care Assistant</title>
+  <link rel="stylesheet" href="style/dash.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      
+
+      <h2 class="logo">SmartCare</h2>
+      <nav>
+        <ul>
+          <li><a href="doctor-dashboar.html" class="active">🏠 Dashboard</a></li>
+          <li><a href="patient.html">👥 Patients</a></li>
+          <li><a href="add-note.html">📝 Add Note</a></li>
+          <li><a href="prescriptions2.html">💊 Prescriptions</a></li>
+          <li><a href="symthon.html">📈 Trends</a></li>
+          <li><a href="add-p.html" >📥 Add</a></li>
+          <li><a href="adr-alerts.html">⚠️ ADR Alerts</a></li>
+          <li><a href="reports.html">📄 Reports</a></li>
+          <li><a href="settings.html">⚙️ Settings</a></li>
+          <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1 id="welcomeText">Welcome, Doctor 👨‍⚕️</h1>
+        <p>Here's a quick overview of your day.</p>
+      </header>
+
+      <!-- Quick Stats -->
+      <section class="stats-grid">
+        <div class="card">👥 Patients Today: <strong id="patientCount">0</strong></div>
+        <div class="card">📝 Pending Rounds: <strong id="pendingCount">0</strong></div>
+        <div class="card">⚠️ ADR Alerts: <strong id="adrCount">0</strong></div>
+        <div class="card">⏱️ Last Login: <strong id="lastLogin">--</strong></div>
+      </section>
+
+      <!-- Patients Table Section -->
+      <section id="patientsSection">
+        <h2>Patients List</h2>
+        <table id="patientsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Condition</th>
+              <th>Last Visit</th>
+            </tr>
+          </thead>
+          <tbody id="patientList">
+            <tr><td colspan="4">Loading...</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="scripts/dash.js"></script>
+</body>
+</html>

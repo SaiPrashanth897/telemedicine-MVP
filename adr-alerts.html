@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADR Alerts - Smart Care Assistant</title>
+  <link rel="stylesheet" href="style/adr.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+   
+    <aside class="sidebar">
+      <h2 class="logo">SmartCare</h2>
+      <nav>
+        <ul>
+          <li><a href="doctor-dashboar.html">🏠 Dashboard</a></li>
+          <li><a href="patient.html">👥 Patients</a></li>
+          <li><a href="add-note.html">📝 Add Note</a></li>
+          <li><a href="prescriptions2.html">💊 Prescriptions</a></li>
+          <li><a href="symthon.html">📈 Trends</a></li>
+          <li><a href="add-p.html" >📥 Add</a></li>
+          <li><a href="adr-alerts.html" class="active">⚠️ ADR Alerts</a></li>
+          <li><a href="reports.html">📄 Reports</a></li>
+          <li><a href="settings.html">⚙️ Settings</a></li>
+          <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>⚠️ ADR Alerts</h1>
+        <p>Review suspected Adverse Drug Reactions</p>
+      </header>
+
+      <section>
+        <table id="adrTable">
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Drug</th>
+              <th>Symptom</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamic rows -->
+          </tbody>
+        </table>
+        <p id="statusMessage"></p>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="scripts/adr.js"></script>
+</body>
+</html>

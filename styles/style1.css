@@ -1,0 +1,164 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #1d3557;
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+  }
+  
+  /* Dashboard Layout */
+  .dashboard-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 180px;
+    padding: 1.5rem 1rem;
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(10px);
+    color: #E0E1DD;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    color: #E0E1DD;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 180px;
+    padding: 2rem;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #0D1B2A;
+  }
+  
+  .main-content header p {
+    font-size: 1rem;
+    color: #1B263B;
+  }
+  
+  /* Table Section */
+  .table-section {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+  }
+  
+  #prescriptionsTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    min-width: 600px;
+  }
+  
+  #prescriptionsTable thead {
+    background-color: rgba(13, 27, 42, 0.1);
+  }
+  
+  #prescriptionsTable thead th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: #0D1B2A;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+  
+  #prescriptionsTable tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: #1B263B;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  #prescriptionsTable tbody tr:hover {
+    background-color: rgba(224, 247, 250, 0.5);
+    transition: background 0.3s ease;
+  }
+  
+  /* Status pill styling */
+  #prescriptionsTable td:nth-child(4) {
+    font-weight: bold;
+  }
+  
+  #prescriptionsTable td:nth-child(4)::before {
+    content: "🟢 ";
+    color: #2a9d8f;
+  }
+  
+  #prescriptionsTable td.status-inactive::before {
+    content: "🔴 ";
+    color: #e63946;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: absolute;
+      left: -180px;
+      transition: left 0.3s ease;
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 1.2rem;
+    }
+  
+    .table-section {
+      padding: 1rem;
+    }
+  
+    #prescriptionsTable {
+      font-size: 0.85rem;
+      min-width: unset;
+    }
+  }
+  

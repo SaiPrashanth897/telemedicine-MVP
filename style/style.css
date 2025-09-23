@@ -1,0 +1,215 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a8dadc, #f1faee);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+/* Container with frosted glass effect */
+.auth-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 18px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Shine animation overlay */
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(25deg);
+  animation: shine 6s infinite linear;
+  z-index: 0;
+}
+
+/* Header */
+.auth-container h2 {
+  text-align: center;
+  color: #0d1b2a;
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form layout */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* Floating labels */
+.auth-container input,
+.auth-container select {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-container input:focus,
+.auth-container select:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.5);
+  background-color: #fff;
+  outline: none;
+}
+
+/* Placeholder animation */
+.auth-container input::placeholder,
+.auth-container select:invalid {
+  color: #999;
+  opacity: 0.7;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.auth-container input:focus::placeholder,
+.auth-container select:focus:invalid {
+  transform: translateY(-8px);
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Button styles with ripple effect */
+.auth-container button {
+  padding: 1rem;
+  background-color: #1b263b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.auth-container button::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.auth-container button:hover::after {
+  left: 100%;
+}
+
+.auth-container button:hover {
+  background-color: #415a77;
+  transform: translateY(-2px);
+}
+
+.auth-container p {
+  margin-top: 1.2rem;
+  text-align: center;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.auth-container a {
+  color: #1b263b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.auth-container a:hover {
+  color: #00b4d8;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 500px) {
+  .auth-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-container h2 {
+    font-size: 1.7rem;
+  }
+
+  .auth-container input,
+  .auth-container select,
+  .auth-container button {
+    font-size: 0.95rem;
+    padding: 0.85rem;
+  }
+}
+
+/* Animated SVG background */
+.svg-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.svg-bg svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+

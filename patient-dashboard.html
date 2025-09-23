@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Dashboard - Smart Care Assistant</title>
+  <link rel="stylesheet" href="patient-dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2 class="logo">SmartCare</h2>
+      <nav>
+        <ul>
+          <li><a href="patient-dashboard.html" class="active">🏠 Dashboard</a></li>
+          <li><a href="patient-prescriptions.html">💊 Medications</a></li>
+          <li><a href="symptom-trends.html">📝 Log Symptoms</a></li>
+          <li><a href="adr1.html">⚠️ ADR Alerts</a></li>
+          <li><a href="login.html" id="logoutBtn">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <h2 id="welcomeMsg">Welcome back!</h2>
+        <p id="lastVisit">Last Visit: ...</p>
+      </section>
+
+      <!-- Health Snapshot -->
+      <section class="snapshot-section">
+        <h3>Current Health Snapshot</h3>
+
+        <div class="snapshot-boxes">
+          <div class="box">
+            <h4>Vitals</h4>
+            <p id="vitals">BP: -- | HR: -- | SpO2: -- | Temp: --</p>
+          </div>
+          <div class="box">
+            <h4>Recent Symptoms</h4>
+            <ul id="symptomsList">
+              <li>No recent symptoms</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Conditions</h4>
+            <ul id="conditionsList">
+              <li>Loading...</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/patient-dashboard.js"></script>
+</body>
+</html>

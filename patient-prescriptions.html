@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Active Prescriptions - Smart Care Assistant</title>
+  <link rel="stylesheet" href="styles/style1.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">SmartCare</h2>
+      <ul>
+        <li><a href="patient-dashboard.html" >🏠 Dashboard</a></li>
+        <li><a href="patient-prescriptions.html" class="active">💊 Medications</a></li>
+        <li><a href="symptom-trends.html">📝 Log Symptoms</a></li>
+        <li><a href="adr1.html">⚠️ ADR Alerts</a></li>
+        <li><a href="login.html" id="logoutBtn">🚪 Logout</a></li>
+      </ul>
+    </nav>
+    </aside>
+    <main class="main-content">
+      <header>
+        <h1>💊 Active Prescriptions</h1>
+        <p>Here’s your current list of medications.</p>
+      </header>
+
+      <section class="table-section">
+        <table id="prescriptionsTable">
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Dosage</th>
+              <th>Frequency</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/patient-prescriptions.js"></script>
+</body>
+</html>

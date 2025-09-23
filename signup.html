@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup - Smart Care Assistant</title>
+  <link rel="stylesheet" href="style/signup.css">
+</head>
+<body>
+  <div class="svg-bg">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#a8dadc" fill-opacity="1">
+        <animate 
+          attributeName="d"
+          dur="10s"
+          repeatCount="indefinite"
+          values="
+            M0,160 C360,120 720,200 1440,160 L1440,320 L0,320 Z;
+            M0,180 C360,240 720,80 1440,180 L1440,320 L0,320 Z;
+            M0,160 C360,120 720,200 1440,160 L1440,320 L0,320 Z
+          " />
+      </path>
+    </svg>
+  </div>
+  <div class="auth-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="signupUsername" placeholder="Username" required />
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <input type="text" id="signupPhone" placeholder="Phone Number" required />
+      <input type="text" id="signupAddress" placeholder="Address" required />
+      <select id="signupRole" required>
+        <option value="">Select Role</option>
+        <option value="doctor">Doctor</option>
+        <option value="patient">Patient</option>
+      </select>
+      <button type="submit">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+  <script type="module" src="scripts/signup.js"></script>
+</body>
+</html>

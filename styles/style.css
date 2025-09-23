@@ -1,0 +1,215 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #ffffff);
+    color: #1D3557;
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 180px; /* Smaller width */
+    padding: 1rem;
+    background: rgba(13, 27, 42, 0.8);
+    backdrop-filter: blur(10px);
+    color: #E0E1DD;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 1.2rem; /* Smaller logo */
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem; /* Smaller font */
+    text-decoration: none;
+    color: #E0E1DD;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Main content area */
+  .dashboard-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .main-content {
+    margin-left: 180px;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #0D1B2A;
+  }
+  
+  header p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  /* Settings form */
+  .settings-section {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+  }
+  
+  .settings-section h2 {
+    font-size: 1.2rem;
+    color: #1B263B;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #778DA9;
+    padding-left: 0.5rem;
+  }
+  
+  .settings-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .settings-section input[type="text"],
+  .settings-section input[type="email"],
+  .settings-section input[type="file"] {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  
+  .settings-section input[type="file"] {
+    padding: 0.4rem;
+  }
+  
+  .settings-section button[type="submit"] {
+    background-color: #415A77;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .settings-section button[type="submit"]:hover {
+    background-color: #1B263B;
+  }
+  
+  /* Notification checkboxes */
+  .settings-section label {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  
+  /* Account management buttons */
+  .button-section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .button-section button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #exportDataBtn {
+    background-color: #778DA9;
+    color: white;
+  }
+  
+  #changePasswordBtn {
+    background-color: #A2D2FF;
+    color: #1B263B;
+  }
+  
+  #deleteAccountBtn {
+    background-color: #E63946;
+    color: white;
+  }
+  
+  #exportDataBtn:hover {
+    background-color: #415A77;
+  }
+  
+  #changePasswordBtn:hover {
+    background-color: #83C5BE;
+  }
+  
+  #deleteAccountBtn:hover {
+    background-color: #C62828;
+  }
+  
+  /* Status message */
+  #settingsStatusMsg {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #0D1B2A;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: absolute;
+      left: -100%;
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 1rem;
+    }
+  
+    .settings-section {
+      padding: 1.2rem;
+    }
+  
+    .button-section {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports - Smart Care Assistant</title>
+  <link rel="stylesheet" href="styles/reports.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>SmartCare</h2>
+      <nav>
+        <ul>
+          <li><a href="doctor-dashboar.html">🏠 Dashboard</a></li>
+          <li><a href="patient.html">👥 Patients</a></li>
+          <li><a href="add-note.html">📝 Add Note</a></li>
+          <li><a href="prescriptions2.html">💊 Prescriptions</a></li>
+          <li><a href="symthon.html">📈 Trends</a></li>
+          <li><a href="add-p.html" >📥 Add</a></li>
+          <li><a href="adr-alerts.html">⚠️ ADR Alerts</a></li>
+          <li><a href="reports.html" class="active">📄 Reports</a></li>
+          <li><a href="settings.html">⚙️ Settings</a></li>
+          <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <h1>End-of-Day Summary</h1>
+      <div id="summaryContainer">
+        <!-- Report content will be injected here -->
+      </div>
+      <button id="generatePDF">🖨️ Download PDF</button>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+
+
+  <script type="module" src="scripts/reports.js"></script>
+</body>
+</html>

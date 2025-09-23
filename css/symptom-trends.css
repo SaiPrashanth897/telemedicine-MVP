@@ -1,0 +1,147 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #1d3557;
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar (Reusing Same Style) */
+  .sidebar {
+    width: 180px;
+    padding: 1.5rem 1rem;
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(10px);
+    color: #E0E1DD;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    color: #E0E1DD;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 180px;
+    padding: 2rem;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Header Section */
+  .header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #0D1B2A;
+  }
+  
+  /* Card / Glass Layout */
+  .card.glass {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+  }
+  
+  /* Form Section */
+  .form-section {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 220px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1B263B;
+  }
+  
+  .form-group select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #ffffff;
+    font-size: 1rem;
+    color: #1d3557;
+  }
+  
+  /* Chart Section */
+  .chart-section h3 {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    color: #0D1B2A;
+  }
+  
+  canvas {
+    width: 100% !important;
+    max-height: 400px;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: absolute;
+      left: -180px;
+      transition: left 0.3s ease;
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 1.2rem;
+    }
+  
+    .form-section {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Smart Care Assistant</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div class="svg-bg">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#a8dadc" fill-opacity="1">
+        <animate 
+          attributeName="d"
+          dur="10s"
+          repeatCount="indefinite"
+          values="
+            M0,160 C360,120 720,200 1440,160 L1440,320 L0,320 Z;
+            M0,180 C360,240 720,80 1440,180 L1440,320 L0,320 Z;
+            M0,160 C360,120 720,200 1440,160 L1440,320 L0,320 Z
+          " />
+      </path>
+    </svg>
+  </div>
+  <div class="auth-container">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <input type="text" id="loginUsername" placeholder="Username" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <select id="loginRole" required>
+        <option value="">Select Role</option>
+        <option value="doctor">Doctor</option>
+        <option value="patient">Patient</option>
+      </select>
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </form>
+  </div>
+  <link rel="stylesheet" href="dash.css" />
+<script type="module" src="scripts/login.js"></script>
+<div class="dna-background">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="dnaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00b4d8" />
+        <stop offset="100%" stop-color="#1b263b" />
+      </linearGradient>
+    </defs>
+    <g stroke="url(#dnaGradient)" stroke-width="1" fill="none">
+      <path d="M50,0 C70,25 30,75 50,100" stroke-dasharray="4 4">
+        <animateTransform attributeName="transform" type="translate" from="0 -10" to="0 10" dur="2s" repeatCount="indefinite" direction="alternate"/>
+      </path>
+      <path d="M50,0 C30,25 70,75 50,100" stroke-dasharray="4 4">
+        <animateTransform attributeName="transform" type="translate" from="0 10" to="0 -10" dur="2s" repeatCount="indefinite" direction="alternate"/>
+      </path>
+    </g>
+  </svg>
+</div>
+
+
+
+</body>
+</html>

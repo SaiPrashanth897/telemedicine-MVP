@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Symptom Trends | Smart Care Assistant</title>
+  <link rel="stylesheet" href="css/dash.css">
+  <link rel="stylesheet" href="css/symptom-trends.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="logo">Smart Care</h2>
+    <ul>
+      <li><a href="patient-dashboard.html" >🏠 Dashboard</a></li>
+      <li><a href="patient-prescriptions.html">💊 Medications</a></li>
+      <li><a href="symptom-trends.html" class="active">📝 Log Symptoms</a></li>
+      <li><a href="adr1.html">⚠️ ADR Alerts</a></li>
+      <li><a href="login.html" id="logoutBtn">🚪 Logout</a></li>
+    </ul>
+  </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h2>📈 Symptom & Vitals Trends</h2>
+    </div>
+
+    <div class="card glass">
+      <div class="form-section">
+        <div class="form-group">
+          <label for="patientSelect">Select Patient:</label>
+          <select id="patientSelect"></select>
+        </div>
+        <div class="form-group">
+          <label for="chartType">Chart Type:</label>
+          <select id="chartType">
+            <option value="line">Line</option>
+            <option value="bar">Bar</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <h3>🩺 Symptom Trends</h3>
+        <canvas id="symptomChart"></canvas>
+
+        <h3>❤️ Vitals Trends (BP, HR, SpO₂)</h3>
+        <canvas id="vitalsChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/symptom-trends.js"></script>
+</body>
+</html>

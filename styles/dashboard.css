@@ -1,0 +1,154 @@
+/* styles/symptom-trends.css */
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #1d3557;
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 180px;
+    padding: 1rem;
+    background: rgba(13, 27, 42, 0.8);
+    backdrop-filter: blur(10px);
+    color: #E0E1DD;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .sidebar h2.logo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #E0E1DD;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .dashboard-container::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(173,216,230,0.2), transparent);
+    z-index: -1;
+    animation: pulse-glow 8s infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 180px;
+    padding: 2rem;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #0D1B2A;
+  }
+  
+  /* Patient Select Dropdown */
+  #patientSelect {
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #1B263B;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+  }
+  
+  #patientSelect:focus {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(65, 90, 119, 0.2);
+  }
+  
+  /* Chart Area */
+  #symptomChart {
+    margin-top: 2rem;
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: absolute;
+      left: -250px;
+      z-index: 1000;
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 1rem;
+    }
+  }
+  

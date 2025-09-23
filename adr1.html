@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ADR Alerts - Smart Care Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    ul#adrAlertsList {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .alert {
+      background-color: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 6px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .high {
+      border-left-color: red;
+      color: #b30000;
+      font-weight: bold;
+    }
+
+    .moderate {
+      border-left-color: orange;
+      color: #b36b00;
+    }
+
+    .no-alerts {
+      color: #666;
+      font-style: italic;
+    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #1d3557;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #0D1B2A;
+    text-align: center;
+  }
+
+  ul#adrAlertsList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .alert {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    border-left: 6px solid #ccc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .alert:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .high {
+    border-left-color: #e63946;
+    color: #b30000;
+    font-weight: bold;
+  }
+
+  .moderate {
+    border-left-color: #ffa500;
+    color: #b36b00;
+  }
+
+  .no-alerts {
+    text-align: center;
+    font-style: italic;
+    color: #1b263b;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 1.2rem;
+    }
+
+    .alert {
+      font-size: 0.95rem;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+  </style>
+</head>
+<body>
+  <h1>Adverse Drug Reaction (ADR) Alerts</h1>
+  <ul id="adrAlertsList">
+    <li class="no-alerts">Loading alerts...</li>
+  </ul>
+
+  <!-- Firebase Scripts -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      query,
+      where,
+      orderBy,
+      getDocs
+    } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDbuYEkjKDbA0MhJiBkByaFJVTS44ieNSY",
+      authDomain: "heathcare-ab5aa.firebaseapp.com",
+      projectId: "heathcare-ab5aa",
+      storageBucket: "heathcare-ab5aa.appspot.com",
+      messagingSenderId: "160649667093",
+      appId: "1:160649667093:web:ad42dbaa790d9c0cc2641"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const uid = user.uid;
+        const adrRef = collection(db, "adr_alerts");
+        const adrQuery = query(
+          adrRef,
+          where("patientId", "==", uid),
+          orderBy("timestamp", "desc")
+        );
+
+        const adrList = document.getElementById("adrAlertsList");
+        adrList.innerHTML = '';
+
+        try {
+          const adrSnap = await getDocs(adrQuery);
+          if (!adrSnap.empty) {
+            adrSnap.forEach(doc => {
+              const alert = doc.data();
+              const li = document.createElement("li");
+              li.classList.add("alert");
+
+              if (alert.severity === "high") {
+                li.classList.add("high");
+              } else if (alert.severity === "moderate") {
+                li.classList.add("moderate");
+              }
+
+              li.textContent = `${alert.symptom} + ${alert.medicine} → possible adverse reaction`;
+              adrList.appendChild(li);
+            });
+          } else {
+            adrList.innerHTML = '<li class="no-alerts">No ADR alerts found.</li>';
+          }
+        } catch (error) {
+          console.error("Error fetching ADR alerts:", error);
+          adrList.innerHTML = '<li class="no-alerts">Failed to load alerts.</li>';
+        }
+      } else {
+        // Redirect to login if not authenticated
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</body>
+</html>

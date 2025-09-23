@@ -1,0 +1,132 @@
+/* Layout */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f7f9fc;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: #1e293b;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
+  .sidebar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar nav ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .sidebar nav ul li a:hover,
+  .sidebar nav ul li a.active {
+    background-color: #334155;
+    color: white;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+  }
+  
+  header {
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #1e293b;
+  }
+  
+  header p {
+    color: #64748b;
+  }
+  
+  /* Prescription Section */
+  .prescription-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+  
+  .prescription-section h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+  }
+  
+  .med-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+  
+  #checkInteractionsBtn {
+    background-color: #0ea5e9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  #checkInteractionsBtn:hover {
+    background-color: #0284c7;
+  }
+  
+  /* Interaction Results */
+  .interaction-results {
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 4px solid #ef4444;
+    background-color: #fef2f2;
+    color: #991b1b;
+    border-radius: 6px;
+    line-height: 1.6;
+    font-size: 0.95em;
+  }
+  
+  .interaction-results ul {
+    padding-left: 20px;
+  }
+  
+  .interaction-results li {
+    margin-bottom: 8px;
+  }
+  

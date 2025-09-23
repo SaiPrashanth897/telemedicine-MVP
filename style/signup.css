@@ -1,0 +1,123 @@
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f1faee, #a8dadc);
+    overflow: hidden;
+  }
+  
+  /* Animated SVG background */
+  .svg-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    overflow: hidden;
+  }
+  
+  .svg-bg svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Auth container styling */
+  .auth-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 1.5rem;
+    color: #1d3557;
+  }
+  
+  /* Form inputs */
+  form input,
+  form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  form input:focus,
+  form select:focus {
+    border-color: #457b9d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(69, 123, 157, 0.5);
+  }
+  
+  /* Buttons */
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #457b9d;
+  }
+  
+  /* Link paragraph */
+  .auth-container p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .auth-container a {
+    color: #1d3557;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .auth-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .auth-container {
+      padding: 1.5rem;
+    }
+  
+    form input,
+    form select,
+    form button {
+      padding: 10px;
+    }
+  }
+  

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Settings - Smart Care Assistant</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">SmartCare</h2>
+      <nav>
+        <ul>
+          <li><a href="doctor-dashboar.html">🏠 Dashboard</a></li>
+          <li><a href="patient.html">👥 Patients</a></li>
+          <li><a href="add-note.html">📝 Add Note</a></li>
+          <li><a href="prescriptions2.html">💊 Prescriptions</a></li>
+          <li><a href="symthon.html">📈 Trends</a></li>
+          <li><a href="add-p.html" >📥 Add</a></li>
+          <li><a href="adr-alerts.html">⚠️ ADR Alerts</a></li>
+          <li><a href="reports.html">📄 Reports</a></li>
+          <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+          <li><a href="login.html" id="logoutBtn">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>⚙️ Settings</h1>
+        <p>Update your profile and notification preferences.</p>
+      </header>
+
+      <section class="settings-section">
+        <form id="settingsForm">
+          <h2>1. Profile Information</h2>
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="email" id="email" placeholder="Email" readonly />
+          <input type="text" id="phone" placeholder="Phone Number" />
+          <input type="text" id="specialty" placeholder="Specialty / Department" />
+          <input type="text" id="clinic" placeholder="Hospital / Clinic Name" />
+          <label>Upload Profile Picture (optional)</label>
+          <input type="file" id="profilePic" accept="image/*" />
+          <button type="submit">💾 Save Changes</button>
+        </form>
+
+        <h2>2. Notifications</h2>
+        <label><input type="checkbox" id="emailNotif" /> Enable Email Notifications</label><br/>
+        <label><input type="checkbox" id="pushNotif" /> Enable Push Notifications</label><br/>
+        <label><input type="checkbox" id="adrNotif" /> ADR Alert Notifications Only</label>
+
+        <h2>3. Account Management</h2>
+        <!-- Buttons Section -->
+<div class="button-section">
+    <button id="exportDataBtn">
+      📥 Export My Data
+    </button>
+    <button id="deleteAccountBtn">
+      🗑️ Delete My Account
+    </button>
+  </div>
+  
+      </section>
+
+      <p id="settingsStatusMsg"></p>
+    </main>
+  </div>
+
+  <script type="module" src="js/doctor-settings.js"></script>
+</body>
+</html>
